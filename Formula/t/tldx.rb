@@ -23,7 +23,6 @@ class Tldx < Formula
   test do
     assert_match "brew.sh is not available", shell_output("#{bin}/tldx brew --tlds sh")
 
-    version_output = shell_output("#{bin}/tldx --version")
-    assert_match version.to_s, version_output
+    assert_match version.to_s, shell_output("#{bin}/tldx --version")
   end
 end
